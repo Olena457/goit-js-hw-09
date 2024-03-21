@@ -1,2 +1,2 @@
-import"./assets/styles-e655db75.js";console.log(Form);
+import"./assets/styles-87a4170c.js";import{v as n}from"./assets/vendor-88ddd14f.js";const o="feedback-form-state",l=document.querySelector("feedback-form");l.addEventListener("input",n(m));l.addEventListener("submit",s);let e=JSON.parse(localStorage.getItem(o))||{};const{email:t,message:a}=l.nextElementSibling;i();function m(r){e={email:t.value,message:a.value},localStorage.setItem(o,JSON.stringify(e)).trim()}function i(){e&&(t.value=e.email||"",a.value=e.email||"")}function s(r){if(r.preventDefault(),console.log({email:t.value,message:a.value}),t.value===""||a.value==="")return alert("Будь ласка, заповніть всі поля");localStorage.removeItem(o),r.currentTarget.reset(),e={}}
 //# sourceMappingURL=commonHelpers2.js.map
