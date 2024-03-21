@@ -85,7 +85,7 @@ function createMarkup(arr) {
 }
 containerEl.insertAdjacentHTML('beforeend', createMarkup(images));
 
-const gallery = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   caption: true,
   captionsData: 'alt',
   captionsDelay: 250,
