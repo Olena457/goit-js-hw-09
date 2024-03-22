@@ -81,7 +81,7 @@ function createMarkup(arr) {
       </a>
     </li>`;
     })
-    .join(' ');
+    .join('');
 }
 containerEl.insertAdjacentHTML('beforeend', createMarkup(images));
 

@@ -1,34 +1,32 @@
 import validator from 'validator';
 
-// console.log(
-//   'Is mango@mail.com a valid email?: ',
-//   validator.isEmail('mango@mail.com')
-// );
-// console.log(
-//   'Is Mangodogmail.com a valid email?: ',
-//   validator.isEmail('Mangodogmail.com')
-// );
+console.log(
+  'Is mango@mail.com a valid email?: ',
+  validator.isEmail('mango@mail.com')
+);
+console.log(
+  'Is Mangodogmail.com a valid email?: ',
+  validator.isEmail('Mangodogmail.com')
+);
 const STORAGE_KEY = 'feedback-form-state';
 
-const form = document.querySelector('feedback-form');
-// const textarea = form.querySelector('textarea');
+const form = document.querySelector('.feedback-form');
 
-form.addEventListener('input', validator(onTextAreaInput));
+form.addEventListener('input', onTextAreaInput);
 form.addEventListener('submit', onFormSubmit);
 
 let dataUserForm = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-const { email, message } = form.nextElementSibling;
-reoladPage();
+const { email, message } = form.elements;
 
 function onTextAreaInput(e) {
-  dataUserForm = { email: email.value, message: message.value };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(dataUserForm)).trim();
+  dataUserForm = { email: email.value.trim(), message: message.value.trim() };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(dataUserForm).trim());
 }
 
-function reoladPage() {
+function reoloadPage() {
   if (dataUserForm) {
     email.value = dataUserForm.email || '';
-    message.value = dataUserForm.email || '';
+    message.value = dataUserForm.message || '';
   }
 }
 
@@ -44,3 +42,4 @@ function onFormSubmit(e) {
   e.currentTarget.reset();
   dataUserForm = {};
 }
+reoloadPage();
