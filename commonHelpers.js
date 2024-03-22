@@ -6,5 +6,5 @@ import"./assets/styles-87a4170c.js";import{S as t}from"./assets/vendor-88ddd14f.
            alt="${i}"  
         />
       </a>
-    </li>`).join(" ")}n.insertAdjacentHTML("beforeend",c(e));new t(".gallery a",{caption:!0,captionsData:"alt",captionsDelay:250});
+    </li>`).join("")}n.insertAdjacentHTML("beforeend",c(e));new t(".gallery a",{caption:!0,captionsData:"alt",captionsDelay:250});
 //# sourceMappingURL=commonHelpers.js.map
