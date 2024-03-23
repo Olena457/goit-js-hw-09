@@ -29,12 +29,7 @@ function onFormSubmit(e) {
     return alert(`Будь ласка, заповніть всі обов'язкові поля`);
   }
 
-  // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (!emailRegex.test(trimmedEmail)) {
-  //   return alert(`Будь ласка, введіть дійсну електронну адресу`);
-  // }
-
-  console.log('email:', trimmedEmail, 'massage:', trimmedMessage);
+  console.log({ email: trimmedEmail, massage: trimmedMessage });
   localStorage.removeItem(STORAGE_KEY);
   e.currentTarget.reset();
   dataUserForm = {};
